@@ -1,9 +1,7 @@
 package com.sheoanna.computers_shop_spring.controllers;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
-
 import com.sheoanna.computers_shop_spring.dtos.ShopDto;
 import com.sheoanna.computers_shop_spring.services.ShopService;
 
@@ -20,4 +18,9 @@ public class ShopController {
     public List<ShopDto> getAllShopsWithComputers() {
         return service.index();
     }
+
+    @GetMapping("/{id}")
+public ShopDto getShopById(@PathVariable Long id) {
+    return service.findShopById(id);
+}
 }

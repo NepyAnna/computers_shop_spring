@@ -2,7 +2,6 @@ package com.sheoanna.computers_shop_spring.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.stereotype.Service;
 import com.sheoanna.computers_shop_spring.dtos.ComputerDto;
 import com.sheoanna.computers_shop_spring.dtos.ShopDto;
@@ -16,10 +15,6 @@ public class ShopService {
     public ShopService(ShopRepository repository) {
         this.repository = repository;
     }
-
-    /*public List<ComputerDto> findAllByShop(Long shopId) {
-        return repository.findAllDtoByShop(shopId);
-    }*/
 
     public List<ShopDto> index() {
     List<Shop> shops = repository.findAll();
@@ -36,4 +31,25 @@ public class ShopService {
     )).collect(Collectors.toList());
     }
 
+    public ShopDto findShopById(Long shopId) {
+        Shop shop = repository.findById(shopId)
+                .orElseThrow(() -> new RuntimeException("Shop with ID " + shopId + " not found!"));
+    
+        return new ShopDto(
+            shop.getId_shop(),
+            shop.getStoreName(),
+            shop.getTaxID(),
+            shop.getComputers().stream()
+                .map(computer -> new ComputerDto(
+                    computer.getComputer_id(),
+                    computer.getBrand(),
+                    computer.getMemorySize(),
+                    computer.getProcessorSpecification(),
+                    computer.getOperatingSystem(),
+                    computer.getPrice(),
+                    computer.getShop() != null ? computer.getShop().getId_shop() : null
+                ))
+                .collect(Collectors.toList())
+        );
+    }
 }

@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Computer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "computer_id")
+    @Column(name = "id_computer")
     private Long computer_id;
 
     @Column(name = "brand", nullable = false, length = 100)

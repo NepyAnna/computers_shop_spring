@@ -23,7 +23,7 @@ public class ComputerController {
         return computers;
     }
 
-    @GetMapping("/search")
+    @GetMapping("/")
     public List<ComputerDto> searchByBrand(@RequestParam String brand) {
         return service.findByBrand(brand);
     }
@@ -33,7 +33,7 @@ public class ComputerController {
         return service.store(computer);
     }
 
-    @DeleteMapping("/brand/{brand}")
+    @DeleteMapping("/{brand}")
     public void deleteComputer(@PathVariable String brand) {
         service.deleteByBrand(brand);
     }
