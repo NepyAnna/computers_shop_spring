@@ -1,5 +1,6 @@
 package com.sheoanna.computers_shop_spring.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -23,20 +24,22 @@ public class Computer {
     private String operatingSystem;
 
     @Column(name = "price", nullable = false, length = 100)
-    private int price;
+    private double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_shop")
+    @JsonBackReference
     private Shop shop;
 
     public Computer(){}
 
-    public Computer(String brand, int size, String specification, String operatingSystem, int price){
+    public Computer(String brand, int size, String specification, String operatingSystem, double price, Shop shop){
         this.brand =brand;
         this.memorySize = size;
         this.processorSpecification = specification;
         this.operatingSystem = operatingSystem;
         this.price = price;
+        this.shop = shop;
     }
 
     public Long getComputer_id() {
@@ -59,7 +62,11 @@ public class Computer {
         return operatingSystem;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
+    }
+
+    public Shop getShop() {
+        return shop;
     }
 }

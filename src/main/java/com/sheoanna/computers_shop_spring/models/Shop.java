@@ -28,7 +28,7 @@ public class Shop {
 
     @OneToMany(mappedBy = "shop", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Computer> computers = new ArrayList<Computer>();
+    private List<Computer> computers = new ArrayList<>();
 
     public Shop() {}
 
@@ -54,7 +54,7 @@ public class Shop {
         return owner;
     }
 
-    public List<Computer> getComputer() {
+    public List<Computer> getComputers() {
         return computers;
     }
 
@@ -77,4 +77,5 @@ public class Shop {
     public void setComputers(List<Computer> list) {
         this.computers = list;
     }
+
 }
