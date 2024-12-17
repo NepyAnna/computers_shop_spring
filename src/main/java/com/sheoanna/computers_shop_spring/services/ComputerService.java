@@ -7,7 +7,6 @@ import com.sheoanna.computers_shop_spring.models.Computer;
 import com.sheoanna.computers_shop_spring.models.Shop;
 import com.sheoanna.computers_shop_spring.repositories.ComputerRepository;
 import com.sheoanna.computers_shop_spring.repositories.ShopRepository;
-
 import jakarta.transaction.Transactional;
 
 @Service
@@ -78,5 +77,4 @@ public class ComputerService {
             throw new RuntimeException("No computers found with brand: " + brand);
         }
     }
-
 }

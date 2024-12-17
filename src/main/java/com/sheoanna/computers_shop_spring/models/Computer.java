@@ -15,7 +15,7 @@ public class Computer {
     private String brand;
 
     @Column(name = "memory_size", nullable = false, length = 100)
-    private int memorySize;
+    private String memorySize;
 
     @Column(name = "processor_specification", nullable = false, length = 100)
     private String processorSpecification;
@@ -33,7 +33,7 @@ public class Computer {
 
     public Computer(){}
 
-    public Computer(String brand, int size, String specification, String operatingSystem, double price, Shop shop){
+    public Computer(String brand, String size, String specification, String operatingSystem, double price, Shop shop){
         this.brand =brand;
         this.memorySize = size;
         this.processorSpecification = specification;
@@ -50,7 +50,7 @@ public class Computer {
         return brand;
     }
 
-    public int getMemorySize() {
+    public String getMemorySize() {
         return memorySize;
     }
 
@@ -68,5 +68,9 @@ public class Computer {
 
     public Shop getShop() {
         return shop;
+    }
+
+    public void setComputer_id(Long id) {
+        this.computer_id = id;
     }
 }
