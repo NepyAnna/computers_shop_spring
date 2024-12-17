@@ -6,7 +6,7 @@ import com.sheoanna.computers_shop_spring.dtos.ShopDto;
 import com.sheoanna.computers_shop_spring.services.ShopService;
 
 @RestController
-@RequestMapping("api-endpoint/shops")
+@RequestMapping("api/shops")
 public class ShopController {
     private ShopService service;
 
@@ -20,7 +20,7 @@ public class ShopController {
     }
 
     @GetMapping("/{id}")
-public ShopDto getShopById(@PathVariable Long id) {
-    return service.findShopById(id);
-}
+    public ShopDto getShopById(@PathVariable Long id) {
+        return service.findShopById(id);
+    }
 }

@@ -1,9 +1,7 @@
 package com.sheoanna.computers_shop_spring.services;
 
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.sheoanna.computers_shop_spring.dtos.ComputerDto;
 import com.sheoanna.computers_shop_spring.models.Computer;
 import com.sheoanna.computers_shop_spring.models.Shop;

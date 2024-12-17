@@ -6,6 +6,7 @@ import com.sheoanna.computers_shop_spring.repositories.OwnerRepository;
 
 @Service
 public class OwnerService {
+    @SuppressWarnings("unused")
     private OwnerRepository repository;
 
     public OwnerService(OwnerRepository repository) {

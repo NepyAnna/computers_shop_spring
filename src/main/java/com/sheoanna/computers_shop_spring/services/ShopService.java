@@ -17,39 +17,37 @@ public class ShopService {
     }
 
     public List<ShopDto> index() {
-    List<Shop> shops = repository.findAll();
-    return shops.stream().map(shop -> new ShopDto(shop.getId_shop(), shop.getStoreName(), shop.getTaxID(), 
-        shop.getComputers().stream().map(computer -> new ComputerDto(
-            computer.getComputer_id(), 
-            computer.getBrand(), 
-            computer.getMemorySize(),
-            computer.getProcessorSpecification(),
-            computer.getOperatingSystem(),
-            computer.getPrice(), 
-            computer.getShop() != null ? computer.getShop().getId_shop() : null
-        )).collect(Collectors.toList())
-    )).collect(Collectors.toList());
+        List<Shop> shops = repository.findAll();
+        return shops.stream().map(shop -> new ShopDto(shop.getId_shop(), shop.getStoreName(), shop.getTaxID(),
+                shop.getComputers().stream().map(computer -> new ComputerDto(
+                        computer.getComputer_id(),
+                        computer.getBrand(),
+                        computer.getMemorySize(),
+                        computer.getProcessorSpecification(),
+                        computer.getOperatingSystem(),
+                        computer.getPrice(),
+                        computer.getShop() != null ? computer.getShop().getId_shop() : null))
+                        .collect(Collectors.toList())))
+                .collect(Collectors.toList());
     }
 
     public ShopDto findShopById(Long shopId) {
         Shop shop = repository.findById(shopId)
                 .orElseThrow(() -> new RuntimeException("Shop with ID " + shopId + " not found!"));
-    
+
         return new ShopDto(
-            shop.getId_shop(),
-            shop.getStoreName(),
-            shop.getTaxID(),
-            shop.getComputers().stream()
-                .map(computer -> new ComputerDto(
-                    computer.getComputer_id(),
-                    computer.getBrand(),
-                    computer.getMemorySize(),
-                    computer.getProcessorSpecification(),
-                    computer.getOperatingSystem(),
-                    computer.getPrice(),
-                    computer.getShop() != null ? computer.getShop().getId_shop() : null
-                ))
-                .collect(Collectors.toList())
-        );
+                shop.getId_shop(),
+                shop.getStoreName(),
+                shop.getTaxID(),
+                shop.getComputers().stream()
+                        .map(computer -> new ComputerDto(
+                                computer.getComputer_id(),
+                                computer.getBrand(),
+                                computer.getMemorySize(),
+                                computer.getProcessorSpecification(),
+                                computer.getOperatingSystem(),
+                                computer.getPrice(),
+                                computer.getShop() != null ? computer.getShop().getId_shop() : null))
+                        .collect(Collectors.toList()));
     }
 }
