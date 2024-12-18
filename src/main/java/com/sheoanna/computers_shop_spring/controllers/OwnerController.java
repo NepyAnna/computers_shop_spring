@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sheoanna.computers_shop_spring.services.OwnerService;
 
 @RestController
-@RequestMapping("/api/owners")
+@RequestMapping("api/owners")
 public class OwnerController {
     @SuppressWarnings("unused")
     private OwnerService service;

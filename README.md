@@ -66,7 +66,7 @@ Delete computers by brand: DELETE /api/computers/{brand}
 
 # Running Tests
 
-
+[![temp-Imagety9-Hqp.avif](https://i.postimg.cc/Y9Lxj9rP/temp-Imagety9-Hqp.avif)](https://postimg.cc/njZmPnQK)
 
 # Future Enhancements
 
