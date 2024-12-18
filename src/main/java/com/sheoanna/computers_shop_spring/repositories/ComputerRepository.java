@@ -6,5 +6,6 @@ import com.sheoanna.computers_shop_spring.models.Computer;
 
 public interface ComputerRepository extends JpaRepository<Computer, Long> {
     List<Computer> findByBrand(String brand);
+
     void deleteByBrand(String brand);
 }

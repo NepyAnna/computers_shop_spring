@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/computers")
+@RequestMapping("/api/computers")
 public class ComputerController {
     private ComputerService service;
 

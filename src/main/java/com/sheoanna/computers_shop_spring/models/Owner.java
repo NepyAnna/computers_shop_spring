@@ -13,7 +13,8 @@ public class Owner {
     @Column(name = "name_owner", nullable = false, length = 100)
     private String nameOwner;
 
-    public Owner() {}
+    public Owner() {
+    }
 
     public Owner(String name) {
         this.nameOwner = name;

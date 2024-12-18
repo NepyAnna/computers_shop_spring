@@ -6,7 +6,7 @@ import com.sheoanna.computers_shop_spring.dtos.ShopDto;
 import com.sheoanna.computers_shop_spring.services.ShopService;
 
 @RestController
-@RequestMapping("api/shops")
+@RequestMapping("/api/shops")
 public class ShopController {
     private ShopService service;
 

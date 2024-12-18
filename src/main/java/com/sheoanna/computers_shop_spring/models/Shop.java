@@ -30,9 +30,10 @@ public class Shop {
     @JsonManagedReference
     private List<Computer> computers = new ArrayList<>();
 
-    public Shop() {}
+    public Shop() {
+    }
 
-    public Shop(String name, Owner owner, int id){
+    public Shop(String name, Owner owner, int id) {
         this.nameStore = name;
         this.owner = owner;
         this.idTax = id;
