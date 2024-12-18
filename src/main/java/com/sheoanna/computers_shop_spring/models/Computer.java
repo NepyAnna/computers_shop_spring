@@ -31,10 +31,11 @@ public class Computer {
     @JsonBackReference
     private Shop shop;
 
-    public Computer(){}
+    public Computer() {
+    }
 
-    public Computer(String brand, String size, String specification, String operatingSystem, double price, Shop shop){
-        this.brand =brand;
+    public Computer(String brand, String size, String specification, String operatingSystem, double price, Shop shop) {
+        this.brand = brand;
         this.memorySize = size;
         this.processorSpecification = specification;
         this.operatingSystem = operatingSystem;
@@ -72,5 +73,25 @@ public class Computer {
 
     public void setComputer_id(Long id) {
         this.computer_id = id;
+    }
+
+    public void setBrand(String newBrand) {
+        this.brand = newBrand;
+    }
+
+    public void setMemorySize(String newSize) {
+        this.memorySize = newSize;
+    }
+
+    public void setProcessorSpecification(String newSpecfacation) {
+        this.processorSpecification = newSpecfacation;
+    }
+
+    public void setOperatingSystem(String newOS) {
+        this.operatingSystem = newOS;
+    }
+
+    public void setPrice(double newPrice) {
+        this.price = newPrice;
     }
 }
