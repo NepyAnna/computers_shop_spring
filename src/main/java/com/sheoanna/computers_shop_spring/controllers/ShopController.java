@@ -17,8 +17,8 @@ public class ShopController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<ShopDto>> getAllShopsWithComputers() {
-        List<ShopDto> shops = service.index();
+    public ResponseEntity<List<ShopDto>> index() {
+        List<ShopDto> shops = service.findAll();
         return ResponseEntity.ok(shops);
     }
 

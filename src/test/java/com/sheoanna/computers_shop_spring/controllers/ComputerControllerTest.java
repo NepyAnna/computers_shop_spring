@@ -52,7 +52,7 @@ public class ComputerControllerTest {
     }
 
     @Test
-    void testSearchByBrand() throws Exception {
+    void testGetByBrand() throws Exception {
         Shop testShop = new Shop();
         testShop.setId_shop(1L);
         ComputerDto compDtoData = new ComputerDto(1L, "Dell", "32GB", "Intel i7", "Windows 10", 1000,

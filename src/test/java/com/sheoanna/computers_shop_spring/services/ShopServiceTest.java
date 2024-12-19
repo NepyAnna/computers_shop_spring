@@ -51,7 +51,7 @@ public class ShopServiceTest {
     void testIndex() {
         when(shopRepository.findAll()).thenReturn(List.of(shop));
 
-        List<ShopDto> result = shopService.index();
+        List<ShopDto> result = shopService.findAll();
 
         assertEquals(1, result.size());
         assertEquals(shop.getTaxID(), result.get(0).taxID());

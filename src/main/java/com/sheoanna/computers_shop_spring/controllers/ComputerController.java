@@ -23,7 +23,7 @@ public class ComputerController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<ComputerDto>> searchByBrand(@RequestParam String brand) {
+    public ResponseEntity<List<ComputerDto>> getByBrand(@RequestParam String brand) {
         List<ComputerDto> computers = service.findByBrand(brand);
         return ResponseEntity.ok(computers);
     }
@@ -40,8 +40,7 @@ public class ComputerController {
             service.deleteByBrand(brand);
             return ResponseEntity.noContent().build();
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }

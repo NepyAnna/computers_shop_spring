@@ -16,7 +16,7 @@ public class ShopService {
                 this.repository = repository;
         }
 
-        public List<ShopDto> index() {
+        public List<ShopDto> findAll() {
                 List<Shop> shops = repository.findAll();
                 return shops.stream().map(shop -> new ShopDto(shop.getId_shop(), shop.getStoreName(), shop.getTaxID(),
                                 shop.getComputers().stream().map(computer -> new ComputerDto(

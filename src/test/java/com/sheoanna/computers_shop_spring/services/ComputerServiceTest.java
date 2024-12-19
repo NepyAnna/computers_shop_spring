@@ -93,7 +93,7 @@ public class ComputerServiceTest {
     @Transactional
     void testStore() {
         ComputerDto newComputerDto = new ComputerDto(
-                null, "Dell", "16GB", "AMD Ryzen", "Linux", 800.00, 1L);
+                1L, "Dell", "16GB", "AMD Ryzen", "Linux", 800.00, 1L);
         
         when(shopRepository.findById(1L)).thenReturn(Optional.of(testShop));
         when(computerRepository.save(any(Computer.class))).thenReturn(testComputer);

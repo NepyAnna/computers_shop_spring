@@ -29,12 +29,12 @@ public class ShopControllerTest {
     ShopService shopService;
 
     @Test
-    void testGetAllShopsWithComputers() throws Exception {
+    void testIndex() throws Exception {
         ComputerDto computerDto = new ComputerDto(1L, "Dell", "32GB", "Intel i7", "Windows 10", 1000.0,
                 1L);
         ShopDto testShop = new ShopDto(1L, "Tech Store", 1234567, List.of(computerDto));
 
-        when(shopService.index()).thenReturn(List.of(testShop));
+        when(shopService.findAll()).thenReturn(List.of(testShop));
 
         mockMvc.perform(get("/api/shops"))
                 .andExpect(status().isOk())

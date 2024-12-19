@@ -64,6 +64,10 @@ Add a new computer: POST /api/computers
 
 Delete computers by brand: DELETE /api/computers/{brand}
 
+# Class Diagram
+
+[![temp-Image-Oq31-Xs.avif](https://i.postimg.cc/brxxDxLB/temp-Image-Oq31-Xs.avif)](https://postimg.cc/QKM9vW2Q)
+
 # Running Tests
 
 [![temp-Imagety9-Hqp.avif](https://i.postimg.cc/Y9Lxj9rP/temp-Imagety9-Hqp.avif)](https://postimg.cc/njZmPnQK)
